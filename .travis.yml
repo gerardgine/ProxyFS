@@ -19,4 +19,7 @@ before_install:
     - cat ${container_id}
 
 script:
-    - docker exec -it `cat ${container_id}` bash -c 'ls -la /; whoami; pwd; ls -la'
+    - docker exec -it `cat ${container_id}` bash -c 'ls -la /'
+    - docker exec -it `cat ${container_id}` bash -c 'whoami'
+    - docker exec -it `cat ${container_id}` bash -c 'pwd'
+    - docker exec -it `cat ${container_id}` bash -c 'ls -la'
