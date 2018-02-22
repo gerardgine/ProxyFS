@@ -14,3 +14,5 @@ FROM centos:7.4.1708
 
 RUN pwd
 RUN ls /
+RUN echo "Hello World!"
+RUN sleep 60

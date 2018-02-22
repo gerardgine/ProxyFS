@@ -15,7 +15,7 @@ before_install:
     - docker build -t proxyfs test/container
     - container_id=$(mktemp)
     - echo ${container_id}
-    - docker run -d --privileged -v `pwd`:/proxyfs proxyfs > "${container_id}"
+    - docker run -d --privileged -v `pwd`:/proxyfs --cidfile "${container_id}" proxyfs
     - cat ${container_id}
 
 script:
