@@ -13,13 +13,13 @@ before_install:
     - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
     - git submodule update --init --recursive
     - docker build -t proxyfs test/container
-    - container_id=$(mktemp -u)
-    - echo ${container_id}
-    - docker run -d --privileged -v `pwd`:/proxyfs --cidfile "${container_id}" proxyfs
-    - cat ${container_id}
+    - cidfile=$(mktemp -u)
+    - echo ${cidfile}
+    - docker run -d --privileged -v `pwd`:/proxyfs --cidfile "${cidfile}" proxyfs
+    - cat ${cidfile}
 
-script:
-    - docker exec -it `cat ${container_id}` bash -c 'ls -la /'
-    - docker exec -it `cat ${container_id}` bash -c 'whoami'
-    - docker exec -it `cat ${container_id}` bash -c 'pwd'
-    - docker exec -it `cat ${container_id}` bash -c 'ls -la'
+#script:
+#    - docker exec -it `cat ${cidfile}` bash -c 'ls -la /'
+#    - docker exec -it `cat ${cidfile}` bash -c 'whoami'
+#    - docker exec -it `cat ${cidfile}` bash -c 'pwd'
+#    - docker exec -it `cat ${cidfile}` bash -c 'ls -la'

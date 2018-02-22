@@ -13,6 +13,4 @@ FROM centos:7.4.1708
 #    pip install requests
 
 RUN pwd
-RUN ls /
-RUN echo "Hello World!"
-RUN sleep 60
+RUN ls -la /proxyfs
