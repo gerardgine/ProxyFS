@@ -12,9 +12,9 @@ git:
 before_install:
     - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
     - git submodule update --init --recursive
-    - docker build -t ProxyFS test/container
+    - docker build -t proxyfs test/container
     - container_id=$(mktemp)
-    - docker run -d -v `pwd`:/ProxyFS ProxyFS > "${container_id}"
+    - docker run -d -v `pwd`:/proxyfs proxyfs > "${container_id}"
 
 script:
     - docker exec -it `ls -la /; whoami; pwd; ls -la'
