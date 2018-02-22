@@ -17,4 +17,4 @@ before_install:
     - docker run -d -v `pwd`:/proxyfs proxyfs > "${container_id}"
 
 script:
-    - docker exec -it `ls -la /; whoami; pwd; ls -la'
+    - docker exec -it `cat ${container_id}` bash -c 'ls -la /; whoami; pwd; ls -la'
