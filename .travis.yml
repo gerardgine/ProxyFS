@@ -1,0 +1,15 @@
+language: go
+
+go:
+    - "1.8.3"
+
+services:
+    - docker
+
+before_install:
+    - docker build -t ProxyFS test/container
+    - container_id=$(mktemp)
+    - docker run -d -v `pwd`:/ProxyFS ProxyFS > "${container_id}"
+
+script:
+    - docker exec -it `ls -la /; whoami; pwd; ls -la'
