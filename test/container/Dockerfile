@@ -14,4 +14,3 @@ FROM centos:7.4.1708
 
 RUN pwd
 RUN ls -la /
-RUN ls -la /proxyfs

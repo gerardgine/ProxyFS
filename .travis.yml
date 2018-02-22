@@ -15,7 +15,7 @@ before_install:
     - docker build -t proxyfs test/container
     - cidfile=$(mktemp -u)
     - echo ${cidfile}
-    - docker run -d -v `pwd`:/proxyfs --cidfile "${cidfile}" proxyfs
+    - docker run -d -v `pwd`:/proxyfs --cidfile "${cidfile}" -w /proxyfs proxyfs ls -la
     - cat ${cidfile}
 
 #script:
