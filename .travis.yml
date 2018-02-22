@@ -14,7 +14,9 @@ before_install:
     - git submodule update --init --recursive
     - docker build -t proxyfs test/container
     - container_id=$(mktemp)
-    - docker run -d -v `pwd`:/proxyfs proxyfs > "${container_id}"
+    - echo ${container_id}
+    - docker run -d --privileged -v `pwd`:/proxyfs proxyfs > "${container_id}"
+    - cat ${container_id}
 
 script:
     - docker exec -it `cat ${container_id}` bash -c 'ls -la /; whoami; pwd; ls -la'
