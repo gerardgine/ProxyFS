@@ -32,7 +32,7 @@ pip install requests
 yum -y install json-c-devel
 yum -y install fuse
 export GOPATH=/proxyfs
-export PATH=\$PATH:\$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 echo "user_allow_other" >> /etc/fuse.conf
 
 
