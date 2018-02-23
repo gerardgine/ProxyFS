@@ -1,8 +1,8 @@
 FROM centos:7.4.1708
 
-RUN for i in wget git epel-release python-pip json-c-devel; do rpm -qa | grep -w $i || yum install $i; done
+RUN for i in wget git epel-release python-pip json-c-devel; do rpm -qa | grep -w $i || yum -y install $i; done
 #RUN yum -y install wget git epel-release python-pip json-c-devel \
-RUN rpm -qa | grep -w gcc || yum install gcc
+RUN rpm -qa | grep -w gcc || yum -y install gcc
 #RUN yum -y --disableexcludes=all install gcc
 
 RUN cd /tmp \
