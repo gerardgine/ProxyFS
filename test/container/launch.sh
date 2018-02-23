@@ -49,6 +49,23 @@ export SAMBA_SOURCE=$GOPATH/src/github.com/swiftstack/ProxyFS/vfs/samba
 # Install Python tox
 pip install tox
 
+# [Setup Swift] Getting the code
+
+#yum -y install memcached sqlite xfsprogs \
+#               libffi-devel xinetd liberasurecode-devel \
+#               openssl-devel python-setuptools \
+#               python-coverage python-devel python-nose \
+#               pyxattr python-eventlet \
+#               python-greenlet python-paste-deploy \
+#               python-netifaces python-pip python-dns \
+#               python-mock
+#
+#pip install --upgrade setuptools
+
+# Install liberasurecode
+yum -y install http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-1.1.1-1.fc25.x86_64.rpm
+yum -y install http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-devel-1.1.1-1.fc25.x86_64.rpm
+
 # Build ProxyFS and run tests
 cd $GOPATH/src/github.com/swiftstack/ProxyFS
 make
