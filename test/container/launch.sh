@@ -1,13 +1,16 @@
 #!/bin/bash
 
+#set -e
 set -x
 
 # Install tools needed above what's in a minimal base box
-yum -y install wget git
+yum -y install wget git which
 
 # Install Golang
 
 yum -y --disableexcludes=all install gcc
+which yum
+pwd
 cd /tmp
 wget -q https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
 tar -C /usr/local -xf go1.8.3.linux-amd64.tar.gz
@@ -15,6 +18,11 @@ rm -rf go1.8.3.linux-amd64.tar.gz
 export PATH=\$PATH:/usr/local/go/bin
 
 # Install Python pip
+which yum
+pwd
+cd -
+which yum
+pwd
 yum -y install epel-release
 yum -y install python-pip
 pip install --upgrade pip
