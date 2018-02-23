@@ -37,13 +37,12 @@ RUN yum -y install gcc-c++-4.8.5-16.el7_4.1 \
                samba-client-4.6.2-12.el7_4 \
                cifs-utils-6.2-10.el7
 
-RUN ls -la /proxyfs
-RUN cd /proxyfs
-#RUN cd /vagrant/src/github.com/swiftstack/ProxyFS/vfs
-RUN pwd
-
-RUN echo $GOPATH
-RUN find / -name go
-RUN ls -la /usr/local && ls -la /usr/local/go && ls -la /usr/local/go/bin
-RUN which go
-RUN exit 1
+#RUN ls -la /proxyfs
+#RUN cd /proxyfs
+#RUN pwd
+#
+#RUN echo $GOPATH
+#RUN find / -name go
+#RUN ls -la /usr/local && ls -la /usr/local/go && ls -la /usr/local/go/bin
+#RUN which go
+#RUN exit 1
