@@ -13,7 +13,8 @@ RUN rm go1.8.3.linux-amd64.tar.gz
 RUN echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bash_profile
 
 # Install Python pip
-RUN yum -y install epel-release python-pip
+RUN yum -y install epel-release
+RUN yum -y install python-pip
 RUN pip install --upgrade pip
 
 # Setup ProxyFS build environment
