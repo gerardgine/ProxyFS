@@ -38,12 +38,12 @@ yum -y install gcc-c++-4.8.5-16.el7_4.1 \
                samba-client-4.6.2-12.el7_4 \
                cifs-utils-6.2-10.el7
 cd $GOPATH/src/github.com/swiftstack/ProxyFS/vfs
-git clone -b samba-4.6.12 --single-branch --depth 1 https://github.com/samba-team/samba.git samba4-6-12-centos
-ln -s samba4-6-12-centos samba
-cd samba
-./configure
-make clean
-make GEN_NDR_TABLES
+#git clone -b samba-4.6.12 --single-branch --depth 1 https://github.com/samba-team/samba.git samba4-6-12-centos
+#ln -s samba4-6-12-centos samba
+#cd samba
+#./configure
+#make clean
+#make GEN_NDR_TABLES
 export SAMBA_SOURCE=$GOPATH/src/github.com/swiftstack/ProxyFS/vfs/samba
 
 # Install Python tox

@@ -1,7 +1,7 @@
 FROM centos:7.4.1708
 
 ## Install tools needed above what's in a minimal base box
-#RUN yum -y install wget git
+#RUN yum -y install sudo wget git
 #
 ## Install Golang
 #
