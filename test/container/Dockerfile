@@ -35,3 +35,4 @@ RUN yum -y install gcc-c++-4.8.5-16.el7_4.1 \
 
 RUN echo $GOPATH
 RUN which go
+RUN ls -la /usr/local && ls -la /usr/local/go && ls -la /usr/local/go/bin
