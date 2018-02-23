@@ -1,7 +1,5 @@
 FROM centos:7.4.1708
 
-RUN echo $GOPATH
-
 # Install tools needed above what's in a minimal base box
 RUN yum -y install wget git
 
@@ -34,3 +32,6 @@ RUN yum -y install gcc-c++-4.8.5-16.el7_4.1 \
                samba-4.6.2-12.el7_4 \
                samba-client-4.6.2-12.el7_4 \
                cifs-utils-6.2-10.el7
+
+RUN echo $GOPATH
+RUN which go
