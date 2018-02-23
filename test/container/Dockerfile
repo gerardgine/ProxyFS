@@ -37,7 +37,9 @@ RUN yum -y install gcc-c++-4.8.5-16.el7_4.1 \
                samba-client-4.6.2-12.el7_4 \
                cifs-utils-6.2-10.el7
 
-RUN cd /vagrant/src/github.com/swiftstack/ProxyFS/vfs
+RUN ls -la /proxyfs
+RUN cd /proxyfs
+#RUN cd /vagrant/src/github.com/swiftstack/ProxyFS/vfs
 RUN pwd
 
 RUN echo $GOPATH
