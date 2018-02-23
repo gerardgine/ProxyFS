@@ -1,15 +1,13 @@
 FROM centos:7.4.1708
 
-RUN for i in wget git epel-release python-pip json-c-devel; do rpm -qa | grep -w $i || yum -y install $i; done
-#RUN yum -y install wget git epel-release python-pip json-c-devel \
-RUN rpm -qa | grep -w gcc || yum -y install gcc
-#RUN yum -y --disableexcludes=all install gcc
+RUN yum -y install wget git epel-release python-pip json-c-devel && \
+    yum -y --disableexcludes=all install gcc
 
 RUN cd /tmp \
-    wget -q https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz \
-    tar -C /usr/local -xf go1.8.3.linux-amd64.tar.gz \
-    rm go1.8.3.linux-amd64.tar.gz \
+    wget -q https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz && \
+    tar -C /usr/local -xf go1.8.3.linux-amd64.tar.gz && \
+    rm go1.8.3.linux-amd64.tar.gz && \
     echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bash_profile
 
-RUN pip install --upgrade pip \
+RUN pip install --upgrade pip && \
     pip install requests
