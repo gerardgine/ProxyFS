@@ -4,16 +4,37 @@ set -e
 set -x
 
 # Yum install. Trying to do as much as possible at once.
+# Here's an explanation of why we need to install each package:
 ## Install Golang
+# -  gcc
+# -  wget
+## Install Python pip
+# -  epel-release
+# -  python-pip
+## Setup ProxyFS build environment
+# -  sudo
+# -  json-c-devel
+# -  fuse
+## Setup Samba
+# -  git \
+# -  gcc-c++-4.8.5-16.el7_4.1 \
+# -  python-devel-2.7.5-58.el7 \
+# -  gnutls-devel-3.3.26-9.el7 \
+# -  libacl-devel-2.2.51-12.el7 \
+# -  openldap-devel-2.4.44-5.el7 \
+# -  samba-4.6.2-12.el7_4 \
+# -  samba-client-4.6.2-12.el7_4 \
+# -  cifs-utils-6.2-10.el7 \
+## Install liberasurecode
+# -  http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-1.1.1-1.fc25.x86_64.rpm
+# -  http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-devel-1.1.1-1.fc25.x86_64.rpm
 yum -y --disableexcludes=all install gcc
 yum -y install \
-    ## Install Golang
     wget \
-    ## Install Python pip
     epel-release \
-    ## Setup ProxyFS build environment
-    sudo json-c-devel fuse \
-    ## Setup Samba
+    sudo \
+    json-c-devel \
+    fuse \
     git \
     gcc-c++-4.8.5-16.el7_4.1 \
     python-devel-2.7.5-58.el7 \
@@ -23,18 +44,19 @@ yum -y install \
     samba-4.6.2-12.el7_4 \
     samba-client-4.6.2-12.el7_4 \
     cifs-utils-6.2-10.el7 \
-    ## Install liberasurecode
     http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-1.1.1-1.fc25.x86_64.rpm \
     http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-devel-1.1.1-1.fc25.x86_64.rpm
-## Install Python pip
 yum -y install python-pip
 
-# Pip install
+# Pip install. Trying to do as much as possible at once.
+# Here's an explanation of why we need to install each package:
+## Setup ProxyFS build environment
+# - requests
+## Install Python tox
+# - tox
 pip install --upgrade pip
 pip install \
-    ## Setup ProxyFS build environment
     requests \
-    ## Install Python tox
     tox
 
 # Install Golang
