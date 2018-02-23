@@ -4,7 +4,7 @@ set -e
 set -x
 
 # Install tools needed above what's in a minimal base box
-yum -y install wget git
+yum -y install sudo wget git
 
 # Install Golang
 
