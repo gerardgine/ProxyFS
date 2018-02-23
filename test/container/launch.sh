@@ -51,3 +51,4 @@ pip install tox
 
 # Build ProxyFS and run tests
 cd $GOPATH/src/github.com/swiftstack/ProxyFS
+#make
