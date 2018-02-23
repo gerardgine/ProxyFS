@@ -36,4 +36,3 @@ FROM centos:7.4.1708
 #               samba-4.6.2-12.el7_4 \
 #               samba-client-4.6.2-12.el7_4 \
 #               cifs-utils-6.2-10.el7
-CMD ["/bin/bash", "/proxyfs/test/container/launch.sh"]

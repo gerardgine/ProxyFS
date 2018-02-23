@@ -16,7 +16,7 @@ before_install:
     - cidfile=$(mktemp -u)
 
 install:
-    - docker run -d -v `pwd`:/proxyfs --cidfile "${cidfile}" -w /proxyfs proxyfs ls -la
+    - docker run -it -v `pwd`:/proxyfs --cidfile "${cidfile}" proxyfs bash -c "/proxyfs/test/container/launch.sh"
 
 #script:
 #    - docker exec -it `cat ${cidfile}` bash -c 'ls -la /'
