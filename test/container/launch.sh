@@ -15,6 +15,7 @@ set -x
 # -  sudo
 # -  json-c-devel
 # -  fuse
+# -  make
 ## Install liberasurecode
 # -  http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-1.1.1-1.fc25.x86_64.rpm
 # -  http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-devel-1.1.1-1.fc25.x86_64.rpm
@@ -35,6 +36,7 @@ yum -y install \
     sudo \
     json-c-devel \
     fuse \
+    make \
     http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-1.1.1-1.fc25.x86_64.rpm \
     http://www.rpmfind.net/linux/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/liberasurecode-devel-1.1.1-1.fc25.x86_64.rpm
 #    git \
