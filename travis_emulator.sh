@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Adding stupid comments...
 set -e
 set -x
 
